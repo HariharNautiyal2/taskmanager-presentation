@@ -66,3 +66,33 @@ body::-webkit-scrollbar, html::-webkit-scrollbar {
     border: 2px solid transparent;
     background-clip: content-box;
   }
+
+  td{
+   
+
+   font-size: 2rem;
+   color: #fff;
+   padding: 10px;
+   border: 1px solid rgba(255, 255, 255, 0.125) !important;
+   -ms-overflow-style: none; /* IE and Edge */
+   scrollbar-width: none !important; /* Firefox */
+  }
+  th{
+    padding: 10px !important;
+    color: #fff;
+     border: 0 !important;
+     background: transparent !important;
+     -ms-overflow-style: none; /* IE and Edge */
+     scrollbar-width: none !important; /* Firefox */
+  }
+  table{
+    border-radius: 10px;
+    background: rgba(0,0,0,0.3);
+    border: 0 !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none !important; /* Firefox */
+  }
+
+  
