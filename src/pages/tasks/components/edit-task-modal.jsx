@@ -22,7 +22,7 @@ export default function EditTaskModal({ task,members }) {
   const [assignedTo, setAssignedTo] = useState(task.assignedTo);
   const [status, setStatus] = useState(task.status);
   const [priority, setPriority] = useState(task.priority);
-  const [deadline, setDeadline] = useState(dayjs(task.deadline));
+  const [deadline, setDeadline] = useState(dayjs(new Date(task.deadline.seconds * 1000 +  task.deadline.nanoseconds / 1e6)));
   const [startDate, setStartDate] = useState(dayjs(new Date(task.startDate.seconds * 1000 +  task.startDate.nanoseconds / 1e6)));
   const [checklist, setChecklist] = useState(task.checklist);
  
@@ -74,7 +74,7 @@ export default function EditTaskModal({ task,members }) {
           className="flex items-center justify-center w-full h-full p-5"
         >
           <div className="card rounded-2xl w-5/12 flex flex-col items-center justify-center p-5">
-            <div className="w-full text-xl font-light text-black text-center flex items-center justify-center p-3 mb-4">- Edit Task -</div>
+            <div className="w-full text-xl font-light text-white text-center flex items-center justify-center p-3 mb-4">- Edit Task -</div>
             <form
               onSubmit={submitData}
               className="flex flex-col items-center justify-center w-full space-y-3 font-light px-5"
@@ -94,11 +94,11 @@ export default function EditTaskModal({ task,members }) {
                   label="Assigned To"
                   onChange={(e) => setAssignedTo(e.target.value)}
                 >
-                  {members.map((member) => (
-                    <MenuItem key={member.value} value={member.value}>
-                      {member.label}
-                    </MenuItem>
-                  ))}
+                    {members.map((member) => (
+                      <MenuItem key={member.id} value={member.id}>
+                        {member.username}
+                      </MenuItem>
+                    ))}
                 </Select>
               </FormControl>
               <FormControl fullWidth>

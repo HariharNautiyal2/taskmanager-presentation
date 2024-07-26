@@ -19,6 +19,8 @@ import { projectCollection } from "../../queries/project";
 import { taskCollection } from "../../queries/task";
 import EditTaskModal from "./components/edit-task-modal";
 import TaskDetailsModal from "./components/task-details-modal";
+import { removeTask } from "../../queries/task";
+import { toast } from "react-toastify";
 
 const Task = () => {
   const { projectId } = useParams();
@@ -69,6 +71,17 @@ const Task = () => {
     );
   }
 
+  function removeTaskNow(taskid, pid) {
+    removeTask(taskid, pid)
+      .then(() => {
+        toast.success("Member removed successfully.");
+      })
+      .catch((error) => {
+        console.error("Error removing member:", error);
+        toast.error("Error removing member.");
+      });
+  }
+
   return (
     <div className="flex flex-row h-screen w-full">
       <div className="w-2/12">
@@ -90,7 +103,7 @@ const Task = () => {
                 </div>
               
                 <EditTaskModal members={members} task={item} />
-                <Button variant="outlined" color="secondary" className="w-full" fullWidth>Remove</Button>
+                <Button variant="outlined" color="secondary" className="w-full" fullWidth onClick={() => removeTaskNow(item.id, projectId)}>Remove</Button>
                 
                 
              </div>

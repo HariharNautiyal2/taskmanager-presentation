@@ -49,6 +49,25 @@ async function makeTaskDoc(data) {
     console.error("Error adding document: ", e);
   }
 }
+export async function removeTask(taskId, projectId) {
+  try {
+    // Delete the task document from the tasks collection
+
+    const taskDocRef = doc(taskCollection, taskId);
+    await deleteDoc(taskDocRef);
+    console.log("Document successfully deleted");
+
+    // Remove the task reference from the project's tasks array
+    const projectDocRef = doc(projectCollection, projectId);
+    await updateDoc(projectDocRef, {
+      tasks: arrayRemove(doc(projectCollection, taskId))
+    });
+    console.log("Task reference removed from project");
+  } catch (error) {
+    console.error("Error removing task:", error);
+    throw new Error("Error removing task."); 
+  }
+}
 
 export async function getAllTasks() {
   const { docs } = await getDocs(taskCollection);
