@@ -1,0 +1,12 @@
+.calendar-container {
+  display: flex;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  .calendar-content {
+    flex: 7;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    
+  }
+}

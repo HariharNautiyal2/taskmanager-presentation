@@ -1,0 +1,76 @@
+.privacy-policy-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+
+  .mainContainer {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f4f4f9;
+  }
+  .main-body {
+    margin-left: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    h5 {
+      font-size: 24px;
+      margin-top: 15px;
+      color: #333;
+    }
+
+    h6 {
+      font-size: 18px;
+      color: #333;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+      li {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.5;
+        margin-bottom: 10px;
+
+        strong {
+          color: #333;
+        }
+      }
+    }
+  }
+}
+
+
+      span {
+        font-size: 18px;
+      }
+
+    .list-group-item {
+      background-color: #6a1b9a;
+      color: #fff;
+      border: none;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+  

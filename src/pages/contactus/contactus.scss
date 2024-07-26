@@ -1,0 +1,95 @@
+.contactus {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  .contact-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #582492;
+    padding: 50px;
+    color: white;
+    border-radius: 10px;
+  
+    .header-text {
+      flex: 1;
+      padding-right: 20px;
+      border-radius: 10px;
+  
+      h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+  
+      p {
+        font-size: 18px;
+      }
+    }
+  
+    .header-image {
+      flex: 1;
+      img {
+        width: 100%;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .contact-options {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    background-color: #f8f9fa;
+
+    .option {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+      padding: 20px;
+      flex: 1;
+      max-width: 400px;
+      text-align: center;
+
+      .icon {
+        font-size: 40px;
+        color: #007bff;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 16px;
+        margin-bottom: 20px;
+        color: #555;
+      }
+
+      a {
+        display: block;
+        color: #007bff;
+        text-decoration: none;
+        margin-bottom: 10px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      button {
+        background-color: #582492;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+.profile {
+  display: flex;
+}
+
+.profileContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 110vh;
+  background-color: #f0f2f5;
+}
+
+.profileContent {
+  margin-top: 100px;
+  width: 600px;
+  height: auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.profileImage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.addButton {
+  background-color: #582498;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 7px;
+  cursor: pointer;
+}
+
+.addButton:hover {
+  background-color: #3f196e;
+}
+
+.hidden {
+  display: none;
+}
+
+.profileDetails {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.profileDetails h2 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.profileDetails h4 {
+  font-size: 1rem;
+  color: #666;
+}
+
+.profileDetails h5 {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.profileDetails input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.profileDetails button {
+  width: 100%;
+  padding: 10px;
+  background-color: #582498;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.profileDetails button:hover {
+  background-color: #3f196e;
+}
+
+
+.password-box {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.username-box {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.email-box {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}

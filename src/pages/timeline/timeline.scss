@@ -1,0 +1,12 @@
+.timeline-container {
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+    .timeline-content {
+      flex: 7;
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      
+    }
+  }
