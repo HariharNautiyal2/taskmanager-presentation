@@ -2,11 +2,14 @@ import "./timeline.scss";
 import Sidebar from "../../component/sidebar/sidebar";
 
 export default function Timeline() {
-    return (
-      <div className="flex flex-row h-screen w-full">
+  return (
+    <div className="w-full h-screen flex flex-col">
+      <div className="w-2/12 h-full">
         <Sidebar />
-        <div className="flex-grow h-full flex flex-col p-5 space-y-1">
-        </div>
       </div>
-    );
-  }
+      <div className="w-10/12 h-full bg-blur">
+      <p>Hello world</p>
+      </div>
+    </div>
+  );
+}

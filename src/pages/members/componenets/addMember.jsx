@@ -19,8 +19,6 @@ export default function AddMember({projectId}) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
     setOpen(false);
-    setName('');
-    setDescription('');
   };
 
   const submitData = (event) => {
@@ -65,7 +63,6 @@ export default function AddMember({projectId}) {
               />
               <Box className="flex flex-row items-center justify-center w-full space-x-5 pt-2">
                 <Button
-                  disabled={isCreatingProject}
                   type="submit"
                   variant="contained"
                   sx={{

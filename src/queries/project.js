@@ -9,6 +9,7 @@ import {
   doc,
   getDoc,
   setDoc,
+  updateDoc,
   arrayUnion,
   or,
   arrayRemove,
@@ -62,7 +63,7 @@ export async function addMemberById(projectId, userId) {
 
 export async function validateUserById(id) {
   try {
-    const userDocRef = doc(userCollection, userId);
+    const userDocRef = doc(userCollection, id);
     const userDoc = await getDoc(userDocRef);
 
     if (userDoc.exists()) {
