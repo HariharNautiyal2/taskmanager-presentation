@@ -43,7 +43,7 @@ export default function EditTaskModal({ task,members }) {
   });
 
 
-  const submitData = (event) => {
+  const submitData = async (event) => {
     event.preventDefault();
     let data = {
       createdBy: currentUser.uid,
@@ -56,8 +56,9 @@ export default function EditTaskModal({ task,members }) {
       checklist,
       assignedTo
     };
-    console.log(data)
-    updateTask(task.id,projectId,data);
+    await updateTask(task.id, projectId, data).then(() => {
+      handleClose();
+    });
   };
 
   return (

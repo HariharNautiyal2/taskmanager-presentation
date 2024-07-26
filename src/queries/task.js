@@ -89,10 +89,7 @@ export async function updateTask(taskId,projectId, updates) {
       bump: Date.now() + Math.floor(Math.random() * 1000)
     });
     await updateDoc(taskDocRef, updates);
-    
-    console.log(`Task with ID ${taskId} successfully updated`);
   } catch (error) {
-    console.error("Error updating task:", error);
     throw new Error("Error updating task.");
   }
 }
