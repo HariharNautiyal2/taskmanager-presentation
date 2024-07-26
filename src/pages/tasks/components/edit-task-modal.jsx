@@ -61,7 +61,7 @@ export default function EditTaskModal({ task,members }) {
 
   return (
     <>
-      <Button onClick={handleOpen} startIcon={<EditIcon />}>
+      <Button onClick={handleOpen} startIcon={<EditIcon />} variant="outlined" color="warning">
         Edit Task
       </Button>
       <Modal

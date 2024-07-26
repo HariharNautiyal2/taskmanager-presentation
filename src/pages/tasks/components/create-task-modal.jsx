@@ -11,6 +11,7 @@ import { getProjectMembers } from "../../../queries/project";
 import dayjs from "dayjs";
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { addTask } from "../../../queries/task";
 
 export default function CreateTaskModal({ members }) {
   const [open, setOpen] = useState(false);
@@ -52,9 +53,9 @@ export default function CreateTaskModal({ members }) {
     },
   });
 
-  const submitData = (event) => {
+  const submitData = async (event) => {
     event.preventDefault();
-    mutateTaskCreation({
+    await addTask({
       createdBy: currentUser.uid,
       name,
       startDate: startDate.toDate(),
@@ -64,6 +65,8 @@ export default function CreateTaskModal({ members }) {
       status,
       checklist,
       assignedTo
+    }).then(() => {
+      handleClose();
     });
   };
 

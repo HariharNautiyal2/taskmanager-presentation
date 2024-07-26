@@ -18,9 +18,10 @@ export default function TaskDetailsModal({ task }) {
       <Button
         onClick={handleOpen}
         startIcon={<RemoveRedEye />}
-        color="warning"
+        variant="contained"
+        fullWidth
       >
-        View Checklist
+        View Details
       </Button>
       <Modal
         open={open}

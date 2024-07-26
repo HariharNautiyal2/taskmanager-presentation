@@ -15,18 +15,39 @@ import {
 import { db } from "../firebase";
 import { parseTaskDoc } from "../utils/parsers";
 
-const taskCollection = collection(db, "tasks");
+export const taskCollection = collection(db, "tasks");
 const projectCollection = collection(db, "projects")
 
 export async function createTask(newTask) {
   const taskDoc = await addDoc(taskCollection, { ...newTask });
   const taskId = taskDoc.id;
-
   await updateDoc(doc(projectCollection, newTask.projectId), {
     tasks: arrayUnion(taskId),
   });
   return { ...newTask, id: taskId };
 
+}
+
+export async function addTask(data) {
+  try {
+    const taskId = await makeTaskDoc(data); 
+    const projectDocRef  = doc(projectCollection, data.projectId);
+    await updateDoc(projectDocRef, {
+      tasks: arrayUnion(doc(taskCollection, taskId))
+    });
+  } catch (error) {
+    console.error("Error adding user to project:", error);
+    throw new Error("Error adding user to project."); 
+  }
+}
+async function makeTaskDoc(data) {
+  try {
+    const docRef = await addDoc(taskCollection, data);
+    console.log("Document written with ID: ", docRef.id);
+    return docRef.id;
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
 }
 
 export async function getAllTasks() {
