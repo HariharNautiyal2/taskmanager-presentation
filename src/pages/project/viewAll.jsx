@@ -27,18 +27,18 @@ const ViewAllProjects = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="h-screen w-full flex flex-col items-center justify-center p-5">
+    <div className="min-h-screen w-full flex flex-col items-center justify-center p-5 bg-blur">
       <div className="h-full w-full">
         <div className="flex flex-row items-center justify-center w-full overflow-hidden">
           <div className="w-1/2 h-full flex flex-row items-center justify-start">
-            <h1 className="font-black text-black text-2xl">Projects</h1>
+            <h1 className="font-black text-2xl text-white">Projects</h1>
           </div>
           <div className="w-1/2 h-full flex flex-row items-center justify-end">
             <CreateProjectModal />
           </div>
         </div>
         <br />
-        <div className="content w-full overflow-hidden">
+        <div className="content w-full overflow-hidden h-screen">
           <DataGrid
             loading={projectsLoading}
             rows={projects ?? []}

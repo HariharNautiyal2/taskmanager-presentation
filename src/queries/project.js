@@ -50,10 +50,9 @@ export async function deleteProject(id) {
 
 export async function addMemberById(projectId, userId) {
   try {
-    const userRef = `/users/${userId}`;
     const projectDocRef  = doc(projectCollection, projectId);
     await updateDoc(projectDocRef, {
-      members: arrayUnion(userRef)
+      members: arrayUnion(doc(userCollection, userId))
     });
   } catch (error) {
     console.error("Error adding user to project:", error);

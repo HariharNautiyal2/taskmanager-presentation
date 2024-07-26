@@ -84,7 +84,7 @@ export default function CreateProjectModal() {
             <Typography id="modal-modal-title" variant="h6" component="h2" className="hidden">
               Create New Project
             </Typography>
-            <div className="w-full text-xl font-light text-black text-center flex items-center justify-center p-3 mb-4">- Create New Project -</div>
+            <div className="w-full text-xl font-light text-white text-center flex items-center justify-center p-3 mb-4">- Create New Project -</div>
             <form
               onSubmit={submitData}
               className="flex flex-col items-center justify-center w-full space-y-3 font-light px-5"

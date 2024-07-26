@@ -20,13 +20,13 @@ import Members from "./pages/members/members";
 import BigCalendar from "./pages/calendar/calendar";
 import Timeline from "./pages/timeline/timeline";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import {  purple,lime } from '@mui/material/colors';
+import {  purple,red } from '@mui/material/colors';
 
 const theme = createTheme({
   palette: {
     mode: 'dark',
     primary: purple,
-    secondary:lime
+    secondary:red
   },
 });
 function App() {
@@ -57,7 +57,7 @@ function App() {
         pauseOnHover
         theme="light"
       />
-      <ThemeProvider  theme={theme}>
+      <ThemeProvider theme={theme} class="text-white">
         <BrowserRouter>
           <Routes>
             <Route path="/">
