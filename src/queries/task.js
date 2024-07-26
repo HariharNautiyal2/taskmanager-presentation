@@ -60,7 +60,7 @@ export async function removeTask(taskId, projectId) {
     // Remove the task reference from the project's tasks array
     const projectDocRef = doc(projectCollection, projectId);
     await updateDoc(projectDocRef, {
-      tasks: arrayRemove(doc(projectCollection, taskId))
+      tasks: arrayRemove(doc(taskCollection, taskId))
     });
     console.log("Task reference removed from project");
   } catch (error) {
