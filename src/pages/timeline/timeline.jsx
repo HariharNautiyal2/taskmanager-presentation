@@ -12,6 +12,7 @@ export default function Timeline() {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  
   useEffect(() => {
     const projectDocRef = doc(projectCollection, projectId);
     const unsubscribe = onSnapshot(projectDocRef, async (projectDoc) => {
@@ -50,7 +51,7 @@ export default function Timeline() {
       <div className="w-2/12 h-full bg-black flex flex-col items-start justify-start">
         <Sidebar />
       </div>
-      <div className="w-10/12 h-full">
+      <div className="w-10/12 h-full p-10 flex flex-col items-start justify-start">
         {loading ? (
           <p>Loading...</p>
         ) : (

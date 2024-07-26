@@ -28,17 +28,36 @@ const TaskGanttChart = ({ tasks }) => {
   ];
 
   const options = {
-    height: 400,
+    height: 500,
     gantt: {
       trackHeight: 30,
+      barHeight: 20,
+      barCornerRadius: 4,
+      criticalPathEnabled: false, // Hide critical path
+      percentCompleteEnabled: false, // Hide percent complete
+      innerGridHorizLine: {
+        stroke: '#444', // Gridline color
+        strokeWidth: 1,
+      },
+      innerGridVertLine: {
+        stroke: '#444', // Gridline color
+        strokeWidth: 1,
+      },
+      labelStyle: {
+        color: '#ddd', // Text color
+      },
+      backgroundColor: '#333', // Chart background color
+      colors: ['#4CAF50', '#FFC107', '#FF5722'], // Task bars colors
     },
-  };
-
+    // Use dark mode for chart container
+    backgroundColor: '#222',
+    };
+    
   return (
     <Chart
       chartType="Gantt"
       width="100%"
-      height="400px"
+      height="100%"
       data={data}
       options={options}
     />
