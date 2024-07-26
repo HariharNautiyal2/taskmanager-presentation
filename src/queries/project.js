@@ -24,6 +24,7 @@ export async function createProject(newProject) {
   await addDoc(projectCollection, {
     ...newProject,
     creationDate: new Date(),
+    bump:0,
     members: [doc(userCollection, newProject.userId)],
   });
 }

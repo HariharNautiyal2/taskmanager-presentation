@@ -11,6 +11,7 @@ import { Box, Button, Modal, Typography, MenuItem, FormControl, InputLabel, Sele
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs from "dayjs";
+import { updateTask } from "../../../queries/task";
 
 export default function EditTaskModal({ task,members }) {
 
@@ -56,7 +57,7 @@ export default function EditTaskModal({ task,members }) {
       assignedTo
     };
     console.log(data)
-    editTaskMutation.mutate(data);
+    updateTask(task.id,projectId,data);
   };
 
   return (

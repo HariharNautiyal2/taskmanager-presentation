@@ -81,6 +81,21 @@ export async function getProjectTasks(projectId) {
 
   return docs.map((doc) => parseTaskDoc(doc));
 }
+export async function updateTask(taskId,projectId, updates) {
+  try {
+    const taskDocRef = doc(taskCollection, taskId);
+    const projectDocRef = doc(projectCollection, projectId);
+    await updateDoc(projectDocRef, {
+      bump: Date.now() + Math.floor(Math.random() * 1000)
+    });
+    await updateDoc(taskDocRef, updates);
+    
+    console.log(`Task with ID ${taskId} successfully updated`);
+  } catch (error) {
+    console.error("Error updating task:", error);
+    throw new Error("Error updating task.");
+  }
+}
 
 export async function deleteTask(taskId, projectId) {
   console.log("Deleting task with ID:", taskId, "from project with ID:", projectId); // Debug log
