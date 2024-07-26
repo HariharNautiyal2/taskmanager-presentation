@@ -59,6 +59,19 @@ export async function addMemberById(projectId, userId) {
     throw new Error("Error adding user to project."); 
   }
 }
+export async function removeMemberById(projectId, userId) {
+  try {
+    const projectDocRef = doc(projectCollection, projectId);
+    const userDocRef = doc(userCollection, userId);
+
+    await updateDoc(projectDocRef, {
+      members: arrayRemove(userDocRef)
+    });
+  } catch (error) {
+    console.error("Error removing user from project:", error);
+    throw new Error("Error removing user from project."); 
+  }
+}
 
 export async function validateUserById(id) {
   try {
